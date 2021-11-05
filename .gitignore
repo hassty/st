@@ -2,7 +2,7 @@
 *.rej
 patches
 st
-st.o
 x
-x.o
+hb
 config.h
+*.o

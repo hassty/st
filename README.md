@@ -3,4 +3,5 @@
 ## Applied patches
 
  - alpha
+ - ligatures
  - scrollback
