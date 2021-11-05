@@ -6,6 +6,7 @@
  - blinking-cursor
  - copyurl
  - delkey
+ - dynamic-cursor-color
  - ligatures
  - scrollback
  - xresources
