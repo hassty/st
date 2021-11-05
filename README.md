@@ -3,6 +3,7 @@
 ## Applied patches
 
  - alpha
+ - blinking-cursor
  - ligatures
  - scrollback
  - xresources
