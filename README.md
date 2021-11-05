@@ -4,6 +4,7 @@
 
  - alpha
  - blinking-cursor
+ - copyurl
  - ligatures
  - scrollback
  - xresources
