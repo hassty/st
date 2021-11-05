@@ -10,4 +10,5 @@
  - ligatures
  - newterm
  - scrollback
+ - swapmouse
  - xresources
