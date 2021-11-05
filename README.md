@@ -5,3 +5,4 @@
  - alpha
  - ligatures
  - scrollback
+ - xresources
