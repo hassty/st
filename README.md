@@ -8,5 +8,6 @@
  - delkey
  - dynamic-cursor-color
  - ligatures
+ - newterm
  - scrollback
  - xresources
