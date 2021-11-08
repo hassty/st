@@ -4,6 +4,7 @@
 
  - alpha
  - blinking-cursor
+ - clipboard
  - copyurl
  - delkey
  - dynamic-cursor-color
