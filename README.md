@@ -12,4 +12,5 @@
  - newterm
  - scrollback
  - swapmouse
+ - undercurl
  - xresources
