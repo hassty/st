@@ -6,6 +6,11 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "monospace:size=10";
+/* Spare fonts */
+static char *font2[] = {
+    "JoyPixels:pixelsize=18:antialias=true:autohint=true"
+};
+
 static int borderpx = 2;
 
 /*
@@ -184,6 +189,7 @@ static uint forcemousemod = ShiftMask;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
+		{ "fontEmoji",    STRING,  &font2[0] },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },

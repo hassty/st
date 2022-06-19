@@ -8,6 +8,7 @@
  - copyurl
  - delkey
  - dynamic-cursor-color
+ - font2
  - ligatures
  - newterm
  - scrollback
