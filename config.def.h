@@ -99,7 +99,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.95;
+float alpha = 0.95, alphaUnfocused = 0.80;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -139,7 +139,8 @@ static const char *colorname[] = {
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 256;
 unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 0;
+static unsigned int defaultrcs = 257;
+unsigned int bg = 256, bgUnfocused = 256;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
@@ -188,38 +189,39 @@ static uint forcemousemod = ShiftMask;
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "font",         STRING,  &font },
-		{ "fontEmoji",    STRING,  &font2[0] },
-		{ "color0",       STRING,  &colorname[0] },
-		{ "color1",       STRING,  &colorname[1] },
-		{ "color2",       STRING,  &colorname[2] },
-		{ "color3",       STRING,  &colorname[3] },
-		{ "color4",       STRING,  &colorname[4] },
-		{ "color5",       STRING,  &colorname[5] },
-		{ "color6",       STRING,  &colorname[6] },
-		{ "color7",       STRING,  &colorname[7] },
-		{ "color8",       STRING,  &colorname[8] },
-		{ "color9",       STRING,  &colorname[9] },
-		{ "color10",      STRING,  &colorname[10] },
-		{ "color11",      STRING,  &colorname[11] },
-		{ "color12",      STRING,  &colorname[12] },
-		{ "color13",      STRING,  &colorname[13] },
-		{ "color14",      STRING,  &colorname[14] },
-		{ "color15",      STRING,  &colorname[15] },
-		{ "background",   STRING,  &colorname[256] },
-		{ "foreground",   STRING,  &colorname[257] },
-		{ "cursorColor",  STRING,  &colorname[258] },
-		{ "termname",     STRING,  &termname },
-		{ "shell",        STRING,  &shell },
-		{ "minlatency",   INTEGER, &minlatency },
-		{ "maxlatency",   INTEGER, &maxlatency },
-		{ "blinktimeout", INTEGER, &blinktimeout },
-		{ "bellvolume",   INTEGER, &bellvolume },
-		{ "tabspaces",    INTEGER, &tabspaces },
-		{ "borderpx",     INTEGER, &borderpx },
-		{ "alpha",        FLOAT,   &alpha },
-		{ "cwscale",      FLOAT,   &cwscale },
-		{ "chscale",      FLOAT,   &chscale },
+		{ "font",           STRING,  &font },
+		{ "fontEmoji",      STRING,  &font2[0] },
+		{ "color0",         STRING,  &colorname[0] },
+		{ "color1",         STRING,  &colorname[1] },
+		{ "color2",         STRING,  &colorname[2] },
+		{ "color3",         STRING,  &colorname[3] },
+		{ "color4",         STRING,  &colorname[4] },
+		{ "color5",         STRING,  &colorname[5] },
+		{ "color6",         STRING,  &colorname[6] },
+		{ "color7",         STRING,  &colorname[7] },
+		{ "color8",         STRING,  &colorname[8] },
+		{ "color9",         STRING,  &colorname[9] },
+		{ "color10",        STRING,  &colorname[10] },
+		{ "color11",        STRING,  &colorname[11] },
+		{ "color12",        STRING,  &colorname[12] },
+		{ "color13",        STRING,  &colorname[13] },
+		{ "color14",        STRING,  &colorname[14] },
+		{ "color15",        STRING,  &colorname[15] },
+		{ "background",     STRING,  &colorname[256] },
+		{ "foreground",     STRING,  &colorname[257] },
+		{ "cursorColor",    STRING,  &colorname[258] },
+		{ "termname",       STRING,  &termname },
+		{ "shell",          STRING,  &shell },
+		{ "minlatency",     INTEGER, &minlatency },
+		{ "maxlatency",     INTEGER, &maxlatency },
+		{ "blinktimeout",   INTEGER, &blinktimeout },
+		{ "bellvolume",     INTEGER, &bellvolume },
+		{ "tabspaces",      INTEGER, &tabspaces },
+		{ "borderpx",       INTEGER, &borderpx },
+		{ "alpha",          FLOAT,   &alpha },
+		{ "alphaUnfocused", FLOAT,   &alphaUnfocused },
+		{ "cwscale",        FLOAT,   &cwscale },
+		{ "chscale",        FLOAT,   &chscale },
 };
 
 /*
